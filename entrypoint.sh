@@ -11,7 +11,10 @@ host=${3}
 port=${4}
 path=${5}
 
+# Set password
+export SSHPASS=${password}
+
 # Deploy
-sshpass -p ${password} ssh -o StrictHostKeyChecking=no -p ${port} -r ./* ${username}'@'${host}':'${path};
+sshpass ssh -v -o StrictHostKeyChecking=no -p ${port} ${username}'@'${host}':'${path} "$CMD"
 
 exit 0
