@@ -1,5 +1,5 @@
 # Container image that runs your code
-FROM ubuntu:18.04
+FROM alpine:3.10
 
 # Install dependencies
 RUN apt-get update && apt-get install -y sshpass
