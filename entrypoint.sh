@@ -12,6 +12,6 @@ port=${4}
 path=${5}
 
 # Deploy
-sshpass ssh -o StrictHostKeyChecking=no -p ${password} -P ${port} -r ./* ${username}'@'${host}':'${path};
+sshpass -p ${password} ssh -o StrictHostKeyChecking=no -P ${port} -r ./* ${username}'@'${host}':'${path};
 
 exit 0
