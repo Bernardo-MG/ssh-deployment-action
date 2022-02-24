@@ -1,0 +1,27 @@
+name: 'SSH Deployment'
+description: 'Deploy through SSH'
+author: 'Bernardo Martínez Garrido'
+inputs:
+  username:
+    description: 'Username for the host.'
+    required: true
+  password:
+    description: 'Password for the host.'
+    required: true
+  host:
+    description: 'Host to deploy.'
+    required: true
+  port:
+    description: 'Port to register.'
+    required: true
+  path:
+    description: 'Path to register.'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.host }}
+branding:
+  icon: 'external-link'
+  color: 'green'
