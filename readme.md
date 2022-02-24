@@ -20,11 +20,11 @@ steps:
 - name: Deploy through SSH
   uses: bernardo-mg/ssh-deployment-action@v1
   with:
-    username: ${{ secrets.USERNAME }
-    password: ${{ secrets.PASSWORD }
-    host: ${{ secrets.HOST }
-    port: ${{ secrets.PORT }
-    path: ${{ secrets.PATH }
+    username: ${{ secrets.USERNAME }}
+    password: ${{ secrets.PASSWORD }}
+    host: ${{ secrets.HOST }}
+    port: ${{ secrets.PORT }}
+    path: ${{ secrets.PATH }}
 ```
 
 ## Collaborate
