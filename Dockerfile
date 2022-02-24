@@ -1,5 +1,5 @@
 # Container image that runs your code
-FROM ubuntu:18.04
+FROM ubuntu:latest
 
 # Install dependencies
 RUN apt-get update && apt-get install -y sshpass
