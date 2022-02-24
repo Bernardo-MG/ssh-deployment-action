@@ -1,6 +1,6 @@
 # SSH Deployment Action
 
-Deploys the currect action through SSH.
+Deploys the current folder through SSH.
 
 ## Inputs
 
