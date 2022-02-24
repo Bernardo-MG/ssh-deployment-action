@@ -12,7 +12,6 @@ port=${4}
 path=${5}
 
 # Deploy
-export SSHPASS=${password};
-sshpass -e ssh -o StrictHostKeyChecking=no -p ${port} ${username}@${host}:${path} "$CMD";
+sshpass -p ${password} scp -o 'StrictHostKeyChecking no' -P ${port} -r ./* ${username}'@'${host}':'${path};
 
 exit 0
