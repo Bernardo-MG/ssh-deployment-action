@@ -2,7 +2,9 @@
 FROM ubuntu:latest
 
 # Install dependencies
-RUN apt-get update && apt-get install -y sshpass
+RUN apt-get update
+RUN apt-get install -y sshpass
+RUN apt-get install -y openssh
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh

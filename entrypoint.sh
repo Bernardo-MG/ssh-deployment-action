@@ -11,10 +11,6 @@ host=${3}
 port=${4}
 path=${5}
 
-# Install dependencies
-apk update;
-apk add openssh;
-
 # Makes sure the SSH folder exists
 mkdir -p ~/.ssh/;
 
