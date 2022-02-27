@@ -15,6 +15,6 @@ path=${5}
 mkdir -p ~/.ssh/;
 
 # Deploy
-sshpass -p "${password}" scp -o StrictHostKeyChecking=no -p ${port} -r ./* ${username}'@'${host}':'${path};
+sshpass -p "${password}" scp -o StrictHostKeyChecking=no -P ${port} -r ./* ${username}'@'${host}':'${path};
 
 exit 0
