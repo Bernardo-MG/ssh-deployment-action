@@ -5,10 +5,6 @@
 # Fails if any commands returns a non-zero value
 set -e
 
-# Install dependencies
-apk update;
-apk add sshpass;
-
 username=${1}
 password=${2}
 host=${3}
