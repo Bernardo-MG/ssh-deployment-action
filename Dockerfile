@@ -1,10 +1,10 @@
 # Container image that runs your code
-FROM ubuntu:latest
+FROM alpine:3.10
 
 # Install dependencies
-RUN apt-get update
-RUN apt-get install -y sshpass
-RUN apt-get install -y openssh
+apk update;
+apk add openssh;
+apk add sshpass;
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
