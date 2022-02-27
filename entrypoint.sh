@@ -14,9 +14,6 @@ path=${5}
 # Makes sure the SSH folder exists
 mkdir -p ~/.ssh/;
 
-# Registers host
-ssh-keyscan -H ${host} >> ~/.ssh/known_hosts;
-
 # Deploy
 sshpass -p "${password}" scp -o StrictHostKeyChecking=no -p ${port} -r ./* ${username}'@'${host}':'${path};
 
