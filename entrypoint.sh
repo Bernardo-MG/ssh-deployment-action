@@ -10,6 +10,9 @@ password=${2}
 host=${3}
 port=${4}
 path=${5}
+folder=${6}
+
+cd ${folder}
 
 # Deploy
 sshpass -p "${password}" scp -o StrictHostKeyChecking=no -P ${port} -rp ./* ${username}'@'${host}':'${path};
