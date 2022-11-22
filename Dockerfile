@@ -1,8 +1,23 @@
-# Container image that runs your code
-FROM alpine:3.10
+# -----------------------------------------------------------------------------
+# ACTION IMAGE
+#
+# An image which copies and runs the action script.
+#
+# The SSH operations require some additional dependencies, making this action
+# a bit more complex than others.
+# -----------------------------------------------------------------------------
+# Requires a heavier image to handle dependencies
+FROM ubuntu:18.04
 
-# Copies your code file from your action repository to the filesystem path `/` of the container
+# Install dependencies
+RUN apt-get update
+RUN apt-get install -y sshpass
+
+# Copy script
 COPY entrypoint.sh /entrypoint.sh
 
-# Code file to execute when the docker container starts up (`entrypoint.sh`)
+# Increase permissions
+RUN chmod +x /entrypoint.sh
+
+# Run script on start
 ENTRYPOINT ["/entrypoint.sh"]
