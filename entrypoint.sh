@@ -5,12 +5,11 @@
 #
 # -- PARAMETERS --
 #
-# - $1: string, username for deployment
-# - $2: string, password for deployment
-# - $3: string, host where the folder will be deployed
-# - $4: string, host port for deployment
-# - $5: string, path inside the host where the files will be deployed
-# - $6: string, local folder containing the files to deploy
+# - $1: string, username for the deployment server
+# - $2: string, password for the deployment server
+# - $3: string, host to deploy to
+# - $4: string, host port
+# - $5: string, path in the host where the files will be deployed
 #
 # -- EFFECTS --
 #
@@ -26,10 +25,6 @@ password=${2}
 host=${3}
 port=${4}
 path=${5}
-folder=${6}
-
-# Move to the folder to deploy
-cd ${folder}
 
 # Deploy
 sshpass -p "${password}" scp -o StrictHostKeyChecking=no -P ${port} -rp ./* ${username}'@'${host}':'${path};
