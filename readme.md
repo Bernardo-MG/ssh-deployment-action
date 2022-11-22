@@ -4,13 +4,13 @@ Deploys the current folder through SSH.
 
 ## Inputs
 
-| Input     | Description       | Required |
-|-----------|-------------------|----------|
-| username  | Host to register. | True     |
-| password  | Host to register. | True     |
-| host      | Host to register. | True     |
-| port      | Host to register. | True     |
-| path      | Host to register. | True     |
+| Input     | Description                                        | Required |
+|-----------|----------------------------------------------------|----------|
+| username  | Username for the deployment server.                | True     |
+| password  | Password for the deployment server.                | True     |
+| host      | Host to deploy to.                                 | True     |
+| port      | Host port.                                         | True     |
+| path      | Path in the host where the files will be deployed. | True     |
 
 ## Usage
 
