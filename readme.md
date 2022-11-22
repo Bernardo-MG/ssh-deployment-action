@@ -14,17 +14,27 @@ Deploys the current folder through SSH.
 
 ## Usage
 
+This deploys the contents of the src folder.
 
 ```
-steps:
-- name: Deploy through SSH
-  uses: bernardo-mg/ssh-deployment-action@v1
-  with:
-    username: ${{ secrets.USERNAME }}
-    password: ${{ secrets.PASSWORD }}
-    host: ${{ secrets.HOST }}
-    port: ${{ secrets.PORT }}
-    path: ${{ secrets.PATH }}
+jobs:
+  deploy:
+    name: Deployment
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check-out
+      uses: actions/checkout@v2
+    - name: Move to deployment folder
+      run: cd ./src
+    - name: Deploy docs
+      uses: bernardo-mg/ssh-deployment-action@v1
+      with:
+        username: ${{ secrets.username }}
+        password: ${{ secrets.password }}
+        host: ${{ secrets.host }}
+        port: ${{ secrets.port }}
+        path: ${{ secrets.path }}
 ```
 
 ## Collaborate
