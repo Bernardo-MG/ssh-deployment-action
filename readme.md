@@ -24,7 +24,7 @@ jobs:
 
     steps:
     - name: Check-out
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     - name: Move to deployment folder
       run: cd ./src
     - name: Deploy docs
