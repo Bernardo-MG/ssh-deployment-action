@@ -16,7 +16,7 @@ Deploys the current folder through SSH.
 
 This deploys the contents of the src folder.
 
-```
+```yaml
 jobs:
   deploy:
     name: Deployment
